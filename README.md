@@ -1,8 +1,8 @@
 # DMS-AutomatedIDReader
-Sistema de autocompleté de formularios de invitados en Lenel, con lector de cedulas
+Sistema de autocompleté de formularios de invitados en Lenel, con lector de cedulas.
 
-Estado actual del desarrollo:
- La herramienta actualmente es capaz de:
+La versión v1, cuenta con las siguientes caracteristicas:
+
 Leer datos desde cédulas costarricenses mediante lector físico.
 
 Decodificar correctamente la información contenida.
@@ -17,4 +17,5 @@ Generador de instaladores que integre el sistema de licencias.
 
 Control de versiones para facilitar el mantenimiento y actualizaciones del software.
 
-Mejora en el sistema de registros (logs) para obtener trazabilidad más específica y detallada de cada proceso.
+Sistema de registros (logs) para obtener trazabilidad más específica y detallada de cada proceso.
+
