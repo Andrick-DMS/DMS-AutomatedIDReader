@@ -52,4 +52,5 @@ Se cuenta con un Dashboard independiente para generar instaladores con:
 Licencia única para cada cliente
 Archivos empaquetados en un ZIP
 Registro de clientes y licencias emitidas
-
+La versión v3.2, cuenta con las siguientes caracteristicas:
+Presenta la misma funcionalidad, solo se le agrego el logo y el icon de la empresa para su distribución
