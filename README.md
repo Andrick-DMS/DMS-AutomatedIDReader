@@ -1,5 +1,6 @@
 # DMS-AutomatedIDReader
 Sistema de autocompleté de formularios de invitados en Lenel, con lector de cedulas.
+
 La versión v1, cuenta con las siguientes caracteristicas:
 
 Leer datos desde cédulas costarricenses mediante lector físico.
