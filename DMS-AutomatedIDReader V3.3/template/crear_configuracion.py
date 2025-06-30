@@ -14,8 +14,8 @@ COLOR_ACCENT = "#e53935"
 class CrearConfiguracionGUI:
     def __init__(self):
         self.ventana = tk.Tk()
-        self.ventana.title("Crear Nueva Configuración")
-        self.ventana.geometry("520x500")
+        self.ventana.title("DMS - Crear Configuración")
+        self.ventana.geometry("500x620")
         self.ventana.configure(bg=COLOR_BG)
 
         try:
@@ -27,36 +27,45 @@ class CrearConfiguracionGUI:
         style.theme_use("clam")
         style.configure("TFrame", background=COLOR_BG)
         style.configure("TLabel", background=COLOR_BG, foreground=COLOR_TEXT, font=("Segoe UI", 11))
-        style.configure("TEntry", font=("Segoe UI", 11))
+        style.configure("TEntry", fieldbackground="white", background="white", foreground="black", relief="flat", font=("Segoe UI", 11))
         style.configure("TButton", font=("Segoe UI", 11), padding=6, background=COLOR_ACCENT, foreground="white")
         style.map("TButton", background=[('active', '#d32f2f')])
 
+        # Encabezado
         frame = ttk.Frame(self.ventana, padding=20, style="TFrame")
-        frame.place(relx=0.5, rely=0.5, anchor="center")
+        frame.place(relx=0.5, rely=0.03, anchor="n")
+        ttk.Label(frame, text="DMS", font=("Segoe UI", 20, "bold")).pack()
 
-        ttk.Label(frame, text="Nombre de la configuración:").grid(row=0, column=0, padx=5, pady=5, sticky="w")
-        self.entry_nombre = ttk.Entry(frame, width=30)
-        self.entry_nombre.grid(row=0, column=1, padx=5, pady=5)
+        # Contenedor del formulario
+        formulario = ttk.Frame(self.ventana, padding=20, style="TFrame")
+        formulario.place(relx=0.5, rely=0.13, anchor="n")
+
+        ttk.Label(formulario, text="Nombre de la configuración:", style="TLabel").pack(pady=(0, 5))
+        self.entry_nombre = ttk.Entry(formulario, width=35, style="TEntry")
+        self.entry_nombre.pack(pady=(0, 20))
+
+        campos = [
+            "Primer Apellido", "Segundo Apellido", "Nombre", "Cedula", "Sexo",
+            "Fecha de Nacimiento", "Fecha de Expiracion"
+        ]
 
         self.campos_vars = []
         self.tab_vars = []
 
-        campos = ["Primer Apellido", "Segundo Apellido", "Nombre", "Cedula", "Sexo", 
-                  "Fecha de Nacimiento", "Fecha de Expiracion"]
+        for campo in campos:
+            ttk.Label(formulario, text=campo + ":", style="TLabel").pack(anchor="w", padx=10)
+            row_frame = ttk.Frame(formulario, style="TFrame")
+            row_frame.pack(pady=5)
 
-        for i, campo in enumerate(campos):
-            ttk.Label(frame, text=campo + ":").grid(row=i+1, column=0, sticky="w", padx=5, pady=2)
             var = StringVar(value=campo)
             tab = StringVar(value="0")
             self.campos_vars.append(var)
             self.tab_vars.append(tab)
 
-            ttk.Entry(frame, textvariable=var, width=20).grid(row=i+1, column=1, padx=5, pady=2)
-            ttk.Entry(frame, textvariable=tab, width=5).grid(row=i+1, column=2, padx=5, pady=2)
+            ttk.Entry(row_frame, textvariable=var, width=30, style="TEntry").pack(side="left", padx=(0, 10))
+            ttk.Entry(row_frame, textvariable=tab, width=5, style="TEntry").pack(side="left")
 
-        ttk.Button(frame, text="Guardar Configuración", command=self.guardar_config).grid(
-            row=len(campos)+2, column=0, columnspan=3, pady=20
-        )
+        ttk.Button(self.ventana, text="Guardar Configuración", command=self.guardar_config).place(relx=0.5, rely=0.93, anchor="center")
 
         self.ventana.mainloop()
 
