@@ -88,3 +88,7 @@ La versión v3.2, cuenta con las siguientes caracteristicas:
 
 Presenta la misma funcionalidad, solo se le agrego el logo y el icon de la empresa para su distribución
 
+La versión v3.3, cuenta con las siguientes caracteristicas:
+
+Presenta la misma funcionalidad, Se cambio el diseño, y colores de la applicación, principalmente del Dashboard y el creador de configuraciones.
+
