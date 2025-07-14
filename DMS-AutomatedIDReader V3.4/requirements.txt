@@ -1,0 +1,7 @@
+pyserial          # Comunicación con el lector QR
+pyautogui         # Autocompletado en formularios
+pillow            # Crear iconos para la bandeja del sistema
+pystray           # Icono de bandeja para el servicio en segundo plano
+tk                # Interfaces gráficas (Tkinter)
+pyinstaller       # Compilación a .exe
+openpyxl
